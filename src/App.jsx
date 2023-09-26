@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import React from 'react';
+import './App.css';
+import ReactJSX from './components/ReactJSX';
+import CompAndProps from './components/CompAndProps';
+import Button from './elements/Button';
+import TextInput from './elements/TextInput';
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <header className="App-header">
+        <ReactJSX />
+        <div className="Components">
+          <CompAndProps bgColor1="#7ff5d7" 
+                        bgColor2="#f57f7f"
+                        bgColor3="#f57ff3"
+                        bgColor4="#f5a47f"/>
+      
+          <form action="">
+            <TextInput border="green" placeholder="Nama" />
+            <Button background="black">Kirim</Button>
+          </form>
+        </div>
+      </header>
+    </div>
+  );
 }
-
-export default App
+export default App;
